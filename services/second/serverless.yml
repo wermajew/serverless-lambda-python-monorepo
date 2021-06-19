@@ -1,0 +1,34 @@
+service: second
+
+plugins:
+  - serverless-python-requirements
+
+custom:
+  baseName: ${opt:stage}-${self:service}
+  pythonRequirements:
+    vendor: ../pycommon
+
+package:
+  exclude:
+    - node_modules/**
+    - venv/**
+    - test/**
+
+provider:
+  name: aws
+  runtime: python3.8
+  environment:
+    LOG_LEVEL: info
+  logRetentionInDays: 30
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - xray:PutTelemetryRecords
+        - xray:PutTraceSegments
+      Resource: "*"
+
+functions:
+  second:
+    name: ${self:custom.baseName}
+    handler: src/handler.handler
+    iamRoleStatementsName: ${self:custom.baseName}

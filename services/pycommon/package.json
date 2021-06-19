@@ -1,0 +1,13 @@
+{
+  "name": "@serverless-lambda-python-monorepo/pycommon",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "poetry install && python -m unittest discover"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "serverless": "2.47.0",
+    "serverless-python-requirements": "5.1.1"
+  }
+}

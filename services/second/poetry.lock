@@ -1,0 +1,20 @@
+[[package]]
+name = "pycommon"
+version = "0.1.0"
+description = ""
+category = "main"
+optional = false
+python-versions = "^3.7"
+develop = true
+
+[package.source]
+type = "directory"
+url = "../pycommon"
+
+[metadata]
+lock-version = "1.1"
+python-versions = "^3.7"
+content-hash = "8955518a3d0ef8d690c3cca4ebda38af535352c6b0c6284295831affd885de69"
+
+[metadata.files]
+pycommon = []

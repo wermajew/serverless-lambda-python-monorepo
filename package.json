@@ -1,0 +1,15 @@
+{
+  "name": "@serverless-lambda-python-monorepo/pymonorepo",
+  "private": true,
+  "workspaces": [
+    "services/*"
+  ],
+  "scripts": {
+    "deploy": "lerna run deploy --stream --",
+    "remove": "lerna run remove --stream --",
+    "test": "lerna run test"
+  },
+  "devDependencies": {
+    "lerna": "4.0.0"
+  }
+}
